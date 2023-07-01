@@ -5,14 +5,13 @@ import plotly.express as px
 import folium
 from streamlit_folium import folium_static
 import pandas as pd
-#"stonks_api_key":st.secrets["API_Key"]
 #market list link:
 #https://stockmarketmba.com/listofstocksforanexchange.php
 #to run file:
 #python -m streamlit run stock4.py
 
 st.write(f"<h1 style='text-align: center; color: #00F900; '>Stonks</h1>", unsafe_allow_html=True)
-stonks_api_key = 7777 #"stonks_api_key":st.secrets["API_Key"]
+stonks_api_key = st.secrets["API_KEY"] #"stonks_api_key":st.secrets["API_Key"]
 
 @st.cache_data
 def getStockForTimeSeriesIntraday(url):
